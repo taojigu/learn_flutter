@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:learn_flutter/lake_app.dart';
 import 'package:learn_flutter/navigation/navigation_widget.dart';
-import 'package:learn_flutter/navigation/navigation_bring_data.dart';
 
 MaterialApp naviMaterial = MaterialApp(title:'Navigation Material',
             initialRoute: '/',
@@ -11,9 +10,9 @@ MaterialApp naviMaterial = MaterialApp(title:'Navigation Material',
             });
 MaterialApp todoMaterial = MaterialApp(
                             title: 'Todo Material',
-                            home:Todo);
-
-void main() => runApp(naviMaterial);
+                            home:null);
+LakeApp lapApp =LakeApp();
+void main() => runApp(lapApp);
 //LakeApp()
 
 class MyApp extends StatelessWidget {

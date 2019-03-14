@@ -13,10 +13,10 @@ class FirstPage extends StatelessWidget {
           child: RaisedButton(
             child: Text("push next"),
             onPressed: () {
-              Route route = MaterialPageRoute(
-                builder:(context) => SecondPage() );
+              //Route route = MaterialPageRoute(
+                //builder:(context) => SecondPage() );
               //Navigator.push(context, route);
-              Navigator.pushNamed(context, '/Second');
+              //Navigator.pushNamed(context, '/Second');
             },
           ),
         ),
@@ -26,8 +26,6 @@ class FirstPage extends StatelessWidget {
 
 
 class SecondPage extends StatelessWidget {
-
-
   @override
   Widget build(BuildContext context) {
       return Scaffold(
