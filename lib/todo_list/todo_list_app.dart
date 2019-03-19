@@ -1,25 +1,56 @@
 import 'package:flutter/material.dart';
+import 'package:learn_flutter/todo_list/Todo.dart';
+import 'todo_factory.dart';
+import 'package:learn_flutter/lake_page.dart';
+import 'package:learn_flutter/easy_home_page.dart';
 
+// Çode Source : https://flutter.dev/docs/cookbook/navigation/passing-data
 
 class TodoListApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    Widget homePage = TodoListPage(title:"todo");
+    List todoList = TodoFactory.todoList();
+    Widget homePage = TodoListPage(title:"TodoListPage", todoList: todoList);
     MaterialApp  app =  MaterialApp(title: "TodoApp",
-    theme: ThemeData(primarySwatch: Colors.blueGrey),
-    home: homePage);
+    theme: ThemeData(primarySwatch: Colors.amber),
+    home: homePage,
+    initialRoute: "/todoHome",
+    routes: {
+      "/todoHome" : (context) => homePage,
+      "/lake" : (context) => LakePage(),
+      '/easyHome' : (context) => EasyHomePage()
+    },);
     return app;
   }
 }
 
-class TodoListPage extends StatefulWidget {
-  TodoListPage({Key key,this.title}):super(key:key);
+class TodoListPage extends StatelessWidget {
+  TodoListPage({Key key,this.title,this.todoList}):super(key:key);
   final String title;
+  final List todoList;
   @override
-  State<StatefulWidget> createState() {
-    return _TodoListPageState();
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text("todoList")),
+      body: ListView.builder(
+        itemCount: todoList.length,
+        itemBuilder: (context,index){
+          Todo todo = todoList[index];
+          return ListTile(title:Text(todo.title),
+          subtitle: Text(todo.description),
+          onTap: () {
+            Navigator.pushNamed(context, todo.router); 
+          });
+        },
+      )
+    );
   }
+  
+  /*State<StatefulWidget> createState() {
+    return _TodoListPageState();
+  }*/
 }
+/*
 class _TodoListPageState extends State <TodoListPage> {
   
   @override
@@ -34,12 +65,13 @@ class _TodoListPageState extends State <TodoListPage> {
   }
   ListView _todoListView () {
     ListView lsv =ListView.builder(
-      itemCount: 2,
+      itemCount: ,
       itemBuilder: (context,i){
-        return ListTile(title: Text("list item"));
+        return ListTile(title: Text("list item"),
+        subtitle : Text("subTitle,should be long"));
       },
     );
     return lsv;
   }
 
-}
+}*/

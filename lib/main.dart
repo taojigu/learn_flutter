@@ -1,21 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:learn_flutter/lake_app.dart';
-import 'package:learn_flutter/navigation/navigation_widget.dart';
 import 'package:learn_flutter/todo_list/todo_list_app.dart';
 
-MaterialApp naviMaterial = MaterialApp(title:'Navigation Material',
-            initialRoute: '/',
-            routes: {
-              '/' : (contxt)=>FirstPage(),
-              '/Second' : (context) => SecondPage()
-            });
-MaterialApp todoMaterial = MaterialApp(
-                            title: 'Todo Material',
-                            home:null);
-LakeApp lapApp = LakeApp();
 TodoListApp todoApp = TodoListApp(); 
 void main() => runApp(todoApp);
-//LakeApp()
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.

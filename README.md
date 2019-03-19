@@ -1,16 +1,13 @@
 # learn_flutter
 
-A new Flutter project.
+一个Flutter 初学者的路线图
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+|功能模块   |对应路线   | online 教程
+|---|---|---|
+|  应用入口 |main.dart   | | 
+|  Hello World |easy_home_page.dart   |   | 
+|  布局layout| lake_page.dart| https://flutter.dev/docs/development/ui/layout/tutorial |
+|  路由注册和使用|todo_list_app.dart| https://flutter.dev/docs/cookbook/navigation/passing-data|
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.io/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.io/docs/cookbook)
-
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.io/docs), which offers tutorials, 
-samples, guidance on mobile development, and a full API reference.

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:learn_flutter/favorite_widget.dart';
 
-class LakeApp extends StatelessWidget {
+//Source Code:https://flutter.dev/docs/development/ui/layout/tutorial
+
+class LakePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Widget titleSection = Container(
@@ -70,12 +72,10 @@ class LakeApp extends StatelessWidget {
       ),
     );
 
-    return MaterialApp(
-      title: 'Flutter layout demo',
-      home: Scaffold(
+    return Scaffold(
         appBar: AppBar(
           title: Text('Flutter layout demo'),
-        ),
+            ),
         body: ListView(
           children: [
             Image.asset(
@@ -89,7 +89,6 @@ class LakeApp extends StatelessWidget {
             textSection,
           ],
         ),
-      ),
     );
   }
 
