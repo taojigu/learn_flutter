@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart' show BuildContext, Container, Key, State, StatefulWidget, Widget;
 import 'article.dart';
+import 'package:http/http.dart' as http;
 
 class ArticleListPage extends StatefulWidget {
   final Widget child;
@@ -13,7 +14,7 @@ class _ArticleListPageState extends State<ArticleListPage> {
   List<Article> _articleList;
   @override
   void initState() { 
-        _articleList = Article.fakeArticleList();
+        this._requestArticleList();
         super.initState();
       }
     
@@ -21,6 +22,10 @@ class _ArticleListPageState extends State<ArticleListPage> {
         return Container(
            child: widget.child,
         );
+      }
+
+      void _requestArticleList()  {
+          _articleList = Article.fakeArticleList();
       }
 
 }
