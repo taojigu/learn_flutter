@@ -20,18 +20,21 @@ class ChatMessageTile extends StatelessWidget {
               child: new Text(message.name[0]),
             ),
           ),
-          new Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              new Text(message.name, style:Theme.of(context).textTheme.subhead),
-              new Container(
-                margin: EdgeInsets.only(top: 5),
-                child: new Container(
-                  child: new Text(message.text,style: Theme.of(context).textTheme.subtitle),
+          new Expanded(
+            child: new Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                new Text(message.name, style:Theme.of(context).textTheme.subhead),
+                new Container(
+                  child: new Text(message.text,
+                    style: Theme.of(context).textTheme.subtitle,
+                    softWrap: true,
+                    overflow: TextOverflow.clip),
                   margin: EdgeInsets.only(top:5),
-                ),
-              )
-            ],
+                  ),
+                
+              ],
+            ),
           )
         ],
       )
