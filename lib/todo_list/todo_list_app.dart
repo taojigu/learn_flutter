@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:learn_flutter/chatting/chat_list_page.dart';
 import 'package:learn_flutter/todo_list/Todo.dart';
 import 'todo_factory.dart';
 import 'package:learn_flutter/lake_page.dart';
@@ -18,7 +19,8 @@ class TodoListApp extends StatelessWidget {
     routes: {
       "/todoHome" : (context) => homePage,
       "/lake" : (context) => LakePage(),
-      '/easyHome' : (context) => EasyHomePage()
+      '/easyHome' : (context) => EasyHomePage(),
+      '/chatList' : (context) => ChatListPage()
     },);
     return app;
   }
