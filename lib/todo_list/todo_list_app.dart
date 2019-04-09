@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:learn_flutter/chatting/chat_list_page.dart';
+import 'package:learn_flutter/contact/contact_page.dart';
 import 'package:learn_flutter/todo_list/Todo.dart';
 import 'todo_factory.dart';
 import 'package:learn_flutter/lake_page.dart';
@@ -13,14 +14,15 @@ class TodoListApp extends StatelessWidget {
     List todoList = TodoFactory.todoList();
     Widget homePage = TodoListPage(title:"TodoListPage", todoList: todoList);
     MaterialApp  app =  MaterialApp(title: "TodoApp",
-    theme: ThemeData(primarySwatch: Colors.amber),
+    theme: ThemeData(primarySwatch: Colors.yellow),
     home: homePage,
     initialRoute: "/todoHome",
     routes: {
       "/todoHome" : (context) => homePage,
       "/lake" : (context) => LakePage(),
       '/easyHome' : (context) => EasyHomePage(),
-      '/chatList' : (context) => ChatListPage()
+      '/chatList' : (context) => ChatListPage(),
+      '/contact'  : (context) => ContactPage()
     },);
     return app;
   }
@@ -33,7 +35,7 @@ class TodoListPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("todoList")),
+      appBar: AppBar(title: Text("todoList11")),
       body: ListView.builder(
         itemCount: todoList.length,
         itemBuilder: (context,index){
