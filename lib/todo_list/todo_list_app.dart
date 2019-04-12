@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:learn_flutter/article/article_list_page.dart';
 import 'package:learn_flutter/chatting/chat_list_page.dart';
 import 'package:learn_flutter/todo_list/Todo.dart';
 import 'todo_factory.dart';
@@ -20,7 +21,8 @@ class TodoListApp extends StatelessWidget {
       "/todoHome" : (context) => homePage,
       "/lake" : (context) => LakePage(),
       '/easyHome' : (context) => EasyHomePage(),
-      '/chatList' : (context) => ChatListPage()
+      '/chatList' : (context) => ChatListPage(),
+      '/article' : (context) => ArticleListPage()
     },);
     return app;
   }
